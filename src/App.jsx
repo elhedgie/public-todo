@@ -5,7 +5,8 @@ import MyInput from './components/input';
 function App() {
   return (
     <div className="App">
-       <MyInput></MyInput>
+      <h1>TODO</h1>
+      <MyInput></MyInput>
     </div>
   );
 }

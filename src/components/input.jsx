@@ -1,38 +1,29 @@
-import React from "react";
-import MyBtn from "./button";
+import React, { useEffect, useState } from "react";
 import MyList from "./list";
+import TodoForm from "./todoForm";
 
-export default class MyInput extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {items: [], text: ''}
-        this.handler = this.handler.bind(this)
-        this.submitter = this.submitter.bind(this)
-    }
-    render() {
-        return (
-            <div className="container">
-                <form className="my-form" onSubmit={this.submitter}>
-                    <input className="my-input" type="text" onChange={this.handler} value={this.state.text}/>
-                    <MyBtn></MyBtn>
-                </form>
-                
-                <MyList tag={this.state.tag} items={this.state.items}></MyList>
-            </div>
-        )
-    }
-    handler(e) {
-        this.setState({ 
-            text: e.target.value,
-        })
-    }
+export default function MyInput (props) {
     
-    submitter(e) {
-        e.preventDefault();
-        if (this.state.text.length === 0) {
-            return;
-        }
-        this.setState({items: [...this.state.items, {text: this.state.text}]})
+    const [itemsState, setItemsState] = useState([])
+    useEffect(()=> localStorage.setItem('todo', JSON.stringify(itemsState))
+    , [itemsState])
+    
+    
+    
+    
+    function itemsSet(value) {
+        setItemsState(value)
     }
+    return (
+        <div className="container">
+            <TodoForm itemsSet={itemsSet}></TodoForm>
+            
+            <MyList items={itemsState}></MyList>
+        </div>
+    )
+    
+   
+    
+    
 }
 

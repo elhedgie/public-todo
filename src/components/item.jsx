@@ -1,59 +1,44 @@
-import React from "react";
-import './item.css'
+import React, { useState } from "react";
+import './main.css'
 import './innerlist.css'
-import MyBtn from "./button";
+import MyList from "./list";
+import TodoForm from "./todoForm";
 
-export default class MyItem extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {text: '', done: false, open: false, subtask: [], checked: false}
-        this.doneMaker = this.doneMaker.bind(this)
-        this.innerMaker = this.innerMaker.bind(this)
-        this.changeInput = this.changeInput.bind(this)
-        this.markAsDone = this.markAsDone.bind(this)
-
+export default function MyItem(props) {
+    const [openState, setOpenState] = useState(false)
+    const [subtaskState, setSubtaskState] = useState([])
+    const [checkedState, setCheckedState] = useState(false)
+    const [arrowState, setArrowState] = useState(false)
+       
+    function doneMaker() {
+        setOpenState(!openState)
+        setArrowState(!arrowState)
+        props.item.subTask = true
+    }
+   
+    function markAsDone() {
+        setCheckedState(!checkedState)
+    }
+    function itemsSet(value) {
+        setSubtaskState(value)
     }
     
-    doneMaker() {
-        // this.setState({done: !this.state.done})
-        this.setState({open: !this.state.open})
-    }
-    changeInput(e) {
-        this.setState({text: e.target.value})
-    }
-    innerMaker(e) {
-        e.preventDefault()
-        this.setState({subtask: [...this.state.subtask, {text: this.state.text}]})
-    }
-    markAsDone() {
-        this.setState({checked: !this.state.checked})
-        console.log(this.state.checked)
-    }
-    render() {
-        return(
+        return ( 
             <li className="item-wrap" >
                 <div className="wrap-todo">
                     <label className="item-label">
                         
-                        <input onChange={this.markAsDone} checked={this.state.checked} className="default-radio" type="checkbox"/>
+                        <input onChange={markAsDone} checked={checkedState} className="default-radio" type="checkbox"/>
                         <span className="custom-radio"></span>
-                        <div className="todo-item" onClick={this.doneMaker} key={new Date}>{this.props.item.text}</div>
+                        <div className="todo-item">{props.item.text}</div>
                     </label>
+                        <div className={arrowState ? "arrow clicked" : "arrow"} onClick={doneMaker}></div>
                 </div>
-                <div className={this.state.open ? 'open' : 'closed'}>
-                    <form className='inner-form' action="">
-                        <input onChange={this.changeInput}  value={this.state.text} className="inner-input" type="text"/>
-                        <MyBtn onClick={this.innerMaker}></MyBtn>
-                    </form>
-                    <ul className="inner-list">
-                        {
-                            this.state.subtask.map(task=>
-                                <li className="inner-item" key={Math.random()}>{task.text}</li>
-                            )
-                        }
-                    </ul>
+                <div className={openState ? 'inner open' : 'inner closed'}>
+                    <TodoForm itemsSet={itemsSet}></TodoForm>
+                    <MyList items={subtaskState}></MyList>
                 </div>
             </li>
         )
-    }
+    
 }

@@ -22,27 +22,43 @@ button {
     width: 100%;
 }
 .wrap-todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
     width: 100%;
+    background-color: rgb(216, 250, 216);
+    border-radius: 10px;
+    margin-bottom: 10px;
+
 }
-.wrap-list {
-    width: 50%;
-    margin: 0 auto;
+.inner {
+    width: 80%;
+    padding: 10px;
+}
+.inner.open {
+    border-radius: 15px;
+    /* background-color: rgb(159, 130, 212); */
 }
 .item-wrap {
     display: flex;
     flex-flow: column;
     align-items: center;
+    border-radius: 15px;
+    margin-bottom: 10px;
 }
 .my-form {
     display: flex;
     justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
     column-gap: 20px;
 }
 .my-input {
     padding: 10px;
     width: 200px;
     min-height: 40px;
-    border: 1px solid rgb(1, 1, 17);
+    border: 1px solid rgb(85, 102, 61);
     border-radius: 20px;
 }
 .my-button {
@@ -52,10 +68,10 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 45%;
-    background-color: #9bb2df;
+    background-color: #e2e8f5;
     background-image: url('../../img/1923369.svg');
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 80%;
     background-position: center;
     color: white;
 }
@@ -63,7 +79,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    flex-grow: 1;
+    
 }
 
 .inner-item {
@@ -76,12 +93,11 @@ button {
     border-radius: 10px;
 }
 .todo-item {
-    width: 90%;
+    width: 100%;
     padding: 15px;
     font-size: 16px;
     font-weight: 600;
-    background-color:#9bb2df;
-    border-radius: 10px;
+    text-align: start;
 }
 
 .inner-list {
@@ -120,18 +136,42 @@ button {
 .default-radio {
     -webkit-appearance: none;
     appearance: none;
-    /* margin: 0 */
+    margin: 0
 }
 .custom-radio {
-    display: inline-block;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     border: 1px solid black;
 }
-.default-radio:checked + .custom-radio {
-    border: 1px solid red;
+.default-radio:checked + .custom-radio::after {
+    position: absolute;
+    content: '';
+    padding: 5%;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: teal;
+    align-self: center;
 }
-/* .default-radio:checked + .custom-radio + .todo-item {
+.default-radio:checked + .custom-radio + .todo-item {
     text-decoration: line-through;
-} */
+}
+
+.arrow {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(136, 226, 226);
+    background-image: url('../../img/arrow-gal\ —\ копия.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-90deg);
+    border-radius: 5px;
+}
+.arrow.clicked {
+    transform: rotate(90deg);
+}
