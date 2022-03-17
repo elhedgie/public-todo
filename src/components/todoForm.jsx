@@ -1,29 +1,30 @@
-import React, { useEffect, useState } from "react";
-import MyBtn from "./button";
-import TodoInput from "./todoInput";
+import React, { useState } from "react";
+import TodoInput from "./TodoInput";
 import './main.css'
+import Button from "./Button";
+import addTodo from "./addTodo.js";
+
+
+
 
 export default function TodoForm(props) {
-    const [idState, setIdState] = useState(0)
-    const [formState, setFormState] = useState([])
     const [inputState, setInputState] = useState('')
-    useEffect(()=>props.itemsSet(formState), [formState])
     return(
         <form className="my-form" onSubmit={submitter}>
-            <TodoInput changer={changer}></TodoInput>
-            <MyBtn></MyBtn>
+            <TodoInput changer={changer} value={inputState}></TodoInput>
+            <Button></Button>
         </form>
     )
-
     function changer(value) {
         setInputState(value)
     }
-    function submitter(e) {
+    async function submitter(e) {
+        const todo = await addTodo({text: inputState, parentId: props.id ? props.id : null, done: false})
         e.preventDefault();
         if (inputState.length === 0) {
             return;
         }
-        setFormState([...formState, {text: inputState, id: idState, subTask: false}])
-        setIdState(idState+1)
+        props.itemsSet(todo)
     }
+    
 }

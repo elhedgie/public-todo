@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
+    color: rgb(7, 43, 43);
 }
+
 ul {
     margin: 0;
     padding: 0;
@@ -9,6 +11,10 @@ ul {
 }
 button {
     border: none;
+    font-family: inherit;
+}
+input {
+    font-family: inherit;
 }
 .container {
     width: 50%;
@@ -25,6 +31,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    column-gap: 10px;
     padding: 0 20px;
     width: 100%;
     background-color: rgb(216, 250, 216);
@@ -56,24 +63,44 @@ button {
 }
 .my-input {
     padding: 10px;
-    width: 200px;
+    width: 300px;
     min-height: 40px;
-    border: 1px solid rgb(85, 102, 61);
-    border-radius: 20px;
+    border: 2px solid rgb(176, 206, 231);
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(47, 67, 105);
 }
 .my-button {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
     width: 40px;
     height: 40px;
-    border-radius: 45%;
+    border-radius: 15px;
     background-color: #e2e8f5;
     background-image: url('../../img/1923369.svg');
     background-repeat: no-repeat;
     background-size: 80%;
     background-position: center;
-    color: white;
+    cursor: pointer;
+
+}
+.delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #f09595;
+    background-image: url('../../img/1487086345-cross_81577.svg');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    cursor: pointer;
+
 }
 .item-label {
     display: flex;
@@ -90,48 +117,17 @@ button {
     width: 60%;
     min-height: 30px;
     background-color: rgb(199, 223, 233);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 .todo-item {
     width: 100%;
     padding: 15px;
-    font-size: 16px;
     font-weight: 600;
     text-align: start;
+    cursor: pointer;
+
 }
 
-.inner-list {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    margin-bottom: 20px;
-    row-gap: 20px;
-}
-.inner-form {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    column-gap: 20px;
-}
-.inner-input {
-    width: 150px;
-    min-height: 40px;
-    border: none;
-    border-bottom: 1px solid grey;
-    padding: 10px;
-}
-.inner-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    min-height: 40px;
-    border-radius: 20px;
-    border: 1px solid rgb(28, 28, 90);
-    color: rgb(28, 28, 90);
-}
 
 .default-radio {
     -webkit-appearance: none;
@@ -147,7 +143,7 @@ button {
     border-radius: 50%;
     border: 1px solid black;
 }
-.default-radio:checked + .custom-radio::after {
+.custom-radio.done-radio::after {
     position: absolute;
     content: '';
     padding: 5%;
@@ -157,10 +153,12 @@ button {
     background-color: teal;
     align-self: center;
 }
-.default-radio:checked + .custom-radio + .todo-item {
+/* .default-radio:checked + .custom-radio + .todo-item {
+} */
+.done {
     text-decoration: line-through;
-}
 
+}
 .arrow {
     display: inline-block;
     width: 30px;
@@ -170,8 +168,30 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     transform: rotate(-90deg);
-    border-radius: 5px;
+    border-radius: 15px;
+    cursor: pointer;
 }
 .arrow.clicked {
     transform: rotate(90deg);
+}
+
+.inner.open {
+    display: block;
+}
+.inner.closed {
+    display: none;
+}
+
+.clean-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 200px;
+    border-radius: 10px;
+    min-height: 40px;
+    background-color: rgb(131, 233, 182);
+    color: rgb(1, 32, 13);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
 }

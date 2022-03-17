@@ -1,12 +1,12 @@
 
-import './App.css';
-import MyInput from './components/input';
+import './App.css'
+import TodoContainer from './components/TodoContainer';
 
 function App() {
   return (
     <div className="App">
       <h1>TODO</h1>
-      <MyInput></MyInput>
+      <TodoContainer></TodoContainer>
     </div>
   );
 }

@@ -1,13 +1,8 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 export default function TodoInput(props) {
-    const [inputState, setInputState] = useState('')
-    const refInput = useRef(inputState)
     return(
-        <input ref={refInput} className="my-input" type="text" onChange={handler} value={inputState}/>
+        <input className="my-input" type="text" onChange={(e)=> props.changer(e.target.value)}/>
     )
-    function handler() {
-        setInputState(refInput.current.value)
-        props.changer(refInput.current.value)
-    }
+
 }

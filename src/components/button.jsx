@@ -1,9 +1,9 @@
 import React from "react";
 
-function MyBtn(props) {
+function Button (props) {
     return(
         <button {...props} className="my-button">{props.children}</button>
     )
 }
 
-export default MyBtn
+export default Button
