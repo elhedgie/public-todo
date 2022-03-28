@@ -1,0 +1,17 @@
+button {
+    border: none;
+    font-family: inherit;
+}
+.cleanBtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 200px;
+    border-radius: 10px;
+    min-height: 40px;
+    background-color: rgb(131, 233, 182);
+    color: rgb(1, 32, 13);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
