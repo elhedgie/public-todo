@@ -1,15 +1,15 @@
 input {
-    box-sizing: border-box;
-    font-family: inherit;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
 .myInput {
-    padding: 10px;
-    width: 300px;
-    min-height: 40px;
-    border: 2px solid rgb(176, 206, 231);
-    border-radius: 15px;
-    font-size: 20px;
-    font-weight: 600;
-    color: rgb(47, 67, 105);
+  padding: 10px;
+  width: 300px;
+  min-height: 40px;
+  border: 2px solid rgb(176, 206, 231);
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(47, 67, 105);
 }

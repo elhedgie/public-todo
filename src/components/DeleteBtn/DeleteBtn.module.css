@@ -1,19 +1,18 @@
 button {
-    border: none;
-    font-family: inherit;
+  border: none;
+  font-family: inherit;
 }
 .deleteBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    background-color: #f09595;
-    background-image: url('../../../img/1487086345-cross_81577.svg');
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
-    cursor: pointer;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #f09595;
+  background-image: url("../../../img/1487086345-cross_81577.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  cursor: pointer;
 }

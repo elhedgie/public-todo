@@ -1,18 +1,12 @@
 .App {
   text-align: center;
-  
 }
-
 
 body {
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: "Balsamiq Sans", cursive;
   font-size: 18px;
 }
-
-
-
 
 .App-link {
   color: #61dafb;
 }
-

@@ -1,106 +1,100 @@
 .itemWrap {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    border-radius: 15px;
-    margin-bottom: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
 
-
 .itemLabel {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-grow: 1;
-    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .inneritem {
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    width: 60%;
-    min-height: 30px;
-    background-color: rgb(199, 223, 233);
-    border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  width: 60%;
+  min-height: 30px;
+  background-color: rgb(199, 223, 233);
+  border-radius: 15px;
 }
 .todoItem {
-    width: 100%;
-    padding: 15px;
-    font-weight: 600;
-    text-align: start;
-    cursor: pointer;
-
+  width: 100%;
+  padding: 15px;
+  font-weight: 600;
+  text-align: start;
+  cursor: pointer;
 }
 
 .wrapTodo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 10px;
-    padding: 0 20px;
-    width: 100%;
-    background-color: rgb(216, 250, 216);
-    border-radius: 10px;
-    margin-bottom: 10px;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+  padding: 0 20px;
+  width: 100%;
+  background-color: rgb(216, 250, 216);
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .defaultRadio {
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 .customRadio {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid black;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 .customRadio.doneRadio::after {
-    position: absolute;
-    content: '';
-    padding: 5%;
-    width: 60%;
-    height: 60%;
-    border-radius: 50%;
-    background-color: teal;
-    align-self: center;
+  position: absolute;
+  content: "";
+  padding: 5%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: teal;
+  align-self: center;
 }
 .arrow {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-color: rgb(136, 226, 226);
-    background-image: url('../../../img/arrow-gal\ —\ копия.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: rotate(-90deg);
-    border-radius: 15px;
-    cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(136, 226, 226);
+  background-image: url("../../../img/arrow-gal\ —\ копия.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(-90deg);
+  border-radius: 15px;
+  cursor: pointer;
 }
 .arrow.clicked {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .inner.open {
-    display: block;
-    border-radius: 15px;
+  display: block;
+  border-radius: 15px;
 }
 .inner.closed {
-    display: none;
+  display: none;
 }
 
 .done {
-    text-decoration: line-through;
-
+  text-decoration: line-through;
 }
 
 .inner {
-    width: 80%;
-    padding: 10px;
+  width: 80%;
+  padding: 10px;
 }
-
